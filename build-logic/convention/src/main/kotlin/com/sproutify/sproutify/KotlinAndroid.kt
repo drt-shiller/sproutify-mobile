@@ -21,7 +21,7 @@ internal fun Project.configureKotlinAndroid(
         compileSdk = 35
 
         defaultConfig {
-            minSdk = 21
+            minSdk = 26
         }
 
         compileOptions {
@@ -61,7 +61,7 @@ private inline fun <reified T : KotlinBaseExtension> Project.configureKotlin() =
         is KotlinJvmProjectExtension -> compilerOptions
         else -> TODO("Unsupported project extension $this ${T::class}")
     }.apply {
-        jvmTarget = JvmTarget.JVM_11
+        jvmTarget = JvmTarget.JVM_17
         allWarningsAsErrors = warningsAsErrors
         freeCompilerArgs.add(
             // Enable experimental coroutines APIs, including Flow

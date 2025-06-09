@@ -9,6 +9,7 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
 androidxComposeBom = "2025.06.00"
+androidxComposeFoundation = "1.8.0-alpha07"
 appcompat = "1.7.1"
 material = "1.12.0"
 ksp = "2.1.10-1.0.31"
@@ -17,6 +18,7 @@ firebaseBom = "33.15.0"
 firebaseCrashlyticsPlugin = "3.0.4"
 firebasePerfPlugin = "1.4.2"
 turbine = "1.2.0"
+androidxLifecycle = "2.8.7"
 gmsPlugin = "4.4.2"
 hilt = "2.56"
 hiltExt = "1.2.0"
@@ -30,6 +32,8 @@ androidxNavigation = "2.8.5"
 androidxLintGradle = "1.0.0-alpha03"
 retrofit = "2.11.0"
 retrofitKotlinxSerializationJson = "1.0.0"
+androidxComposeRuntimeTracing = "1.7.6"
+androidxTracing = "1.3.0-alpha02"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -47,7 +51,10 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "androidxComposeFoundation" }
+androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -86,6 +93,13 @@ kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", v
 kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-kotlin-serialization = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
+androidx-compose-runtime-tracing = { group = "androidx.compose.runtime", name = "runtime-tracing", version.ref = "androidxComposeRuntimeTracing" }
+androidx-tracing-ktx = { group = "androidx.tracing", name = "tracing-ktx", version.ref = "androidxTracing" }
+androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
+androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" }
+
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -100,13 +114,14 @@ firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "
 firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-gms = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }
+#gms = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }
 
 
 # Plugins defined by this project
 sproutify-android-application = { id = "sproutify.android.application" }
 sproutify-android-application-compose = { id = "sproutify.android.application.compose" }
 sproutify-android-application-firebase = { id = "sproutify.android.application.firebase" }
+sproutify-android-application-flavors = { id = "sproutify.android.application.flavors" }
 sproutify-android-application-jacoco = { id = "sproutify.android.application.jacoco" }
 sproutify-android-feature = { id = "sproutify.android.feature" }
 sproutify-android-library = { id = "sproutify.android.library" }

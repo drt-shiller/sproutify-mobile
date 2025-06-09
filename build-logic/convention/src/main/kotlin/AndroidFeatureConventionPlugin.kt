@@ -11,8 +11,8 @@ import org.gradle.kotlin.dsl.dependencies
 class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            apply(plugin = "nowinandroid.android.library")
-            apply(plugin = "nowinandroid.hilt")
+            apply(plugin = "sproutify.android.library")
+            apply(plugin = "sproutify.hilt")
             apply(plugin = "org.jetbrains.kotlin.plugin.serialization")
 
             extensions.configure<LibraryExtension> {
@@ -21,8 +21,9 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-//                "implementation"(project(":core:ui"))
-//                "implementation"(project(":core:designsystem"))
+                "implementation"(project(":core:ui"))
+                "implementation"(project(":core:designsystem"))
+                "implementation"(project(":core:localization"))
 //
                 "implementation"(libs.findLibrary("androidx.hilt.navigation.compose").get())
                 "implementation"(libs.findLibrary("androidx.lifecycle.runtimeCompose").get())
@@ -30,11 +31,13 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 "implementation"(libs.findLibrary("androidx.navigation.compose").get())
                 "implementation"(libs.findLibrary("androidx.tracing.ktx").get())
                 "implementation"(libs.findLibrary("kotlinx.serialization.json").get())
+                "implementation"(libs.findLibrary("androidx-compose-foundation").get())
+                "implementation"(libs.findLibrary("androidx-compose-foundation-layout").get())
 
-                "testImplementation"(libs.findLibrary("androidx.navigation.testing").get())
-                "androidTestImplementation"(
-                    libs.findLibrary("androidx.lifecycle.runtimeTesting").get(),
-                )
+//                "testImplementation"(libs.findLibrary("androidx.navigation.testing").get())
+//                "androidTestImplementation"(
+//                    libs.findLibrary("androidx.lifecycle.runtimeTesting").get(),
+//                )
             }
         }
     }

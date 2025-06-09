@@ -78,14 +78,14 @@ gradlePlugin {
 //            id = libs.plugins.sproutify.android.room.get().pluginId
 //            implementationClass = "AndroidRoomConventionPlugin"
 //        }
-        register("androidFirebase") {
-            id = libs.plugins.sproutify.android.application.firebase.get().pluginId
-            implementationClass = "AndroidApplicationFirebaseConventionPlugin"
-        }
-//        register("androidFlavors") {
-//            id = libs.plugins.sproutify.android.application.flavors.get().pluginId
-//            implementationClass = "AndroidApplicationFlavorsConventionPlugin"
+//        register("androidFirebase") {
+//            id = libs.plugins.sproutify.android.application.firebase.get().pluginId
+//            implementationClass = "AndroidApplicationFirebaseConventionPlugin"
 //        }
+        register("androidFlavors") {
+            id = libs.plugins.sproutify.android.application.flavors.get().pluginId
+            implementationClass = "AndroidApplicationFlavorsConventionPlugin"
+        }
         register("androidLint") {
             id = libs.plugins.sproutify.android.lint.get().pluginId
             implementationClass = "AndroidLintConventionPlugin"
