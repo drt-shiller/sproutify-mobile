@@ -1,46 +1,39 @@
+import com.sproutify.sproutify.SprtBuildType
+
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.sproutify.android.application)
+    alias(libs.plugins.sproutify.android.application.compose)
+    alias(libs.plugins.sproutify.android.application.jacoco)
+    alias(libs.plugins.sproutify.android.application.firebase)
+    alias(libs.plugins.sproutify.hilt)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
-    namespace = "com.sproutify.sproutify"
-    compileSdk = 34
-
     defaultConfig {
         applicationId = "com.sproutify.sproutify"
-        minSdk = 28
-        targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
-
+        versionName = "0.0.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix = SprtBuildType.DEBUG.applicationIdSuffix
+        }
         release {
             isMinifyEnabled = false
+            applicationIdSuffix = SprtBuildType.RELEASE.applicationIdSuffix
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    buildFeatures {
-        compose = true
-    }
+    namespace = "com.sproutify.sproutify"
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
