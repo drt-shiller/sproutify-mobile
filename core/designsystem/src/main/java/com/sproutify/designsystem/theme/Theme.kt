@@ -52,6 +52,8 @@ fun SprtTheme(
 object SprtTheme {
     val padding: Padding = SprtPadding
 
+    val spacing: Spacing = SprtSpacing
+
     val colors: ColorScheme
         @Composable @ReadOnlyComposable get() = MaterialTheme.colorScheme
 

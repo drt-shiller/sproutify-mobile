@@ -36,7 +36,7 @@ internal val SprtTypography = Typography(
         lineHeight = 44.sp
     ),
     headlineLarge = TextStyle(
-        fontWeight = FontWeight.Medium,
+        fontWeight = FontWeight.ExtraBold,
         fontSize = 32.sp,
         lineHeight = 40.sp
     ),

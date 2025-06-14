@@ -1,5 +1,6 @@
 package com.sproutify.auth.navigation
 
+import android.util.Log
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptionsBuilder
@@ -9,6 +10,9 @@ import com.sproutify.auth.landing.LandingScreen
 import com.sproutify.auth.login.SignInScreen
 import com.sproutify.auth.onboarding.SignUpScreen
 import kotlinx.serialization.Serializable
+
+
+@Serializable data object AuthBaseRoute
 
 @Serializable data object LandingRoute
 
@@ -32,7 +36,7 @@ fun NavGraphBuilder.authSection(
     onSignInClicked: () -> Unit,
     onSignUpClicked: () -> Unit,
 ) {
-    navigation<LandingRoute>(startDestination = LandingRoute) {
+    navigation<AuthBaseRoute>(startDestination = LandingRoute) {
         composable<LandingRoute>() {
             LandingScreen(
                 onSignInClicked = onSignInClicked,
@@ -41,7 +45,11 @@ fun NavGraphBuilder.authSection(
         }
 
         composable<SignInRoute> {
-            SignInScreen()
+            SignInScreen(
+                navigateToSignUp = onSignUpClicked,
+                navigateToForgotPassword = {},
+                navigateToFeed = {}
+            )
         }
 
         composable<SignUpRoute> {

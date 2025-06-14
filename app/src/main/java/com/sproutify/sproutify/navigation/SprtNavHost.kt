@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.NavHostController
-import com.sproutify.auth.navigation.LandingRoute
+import com.sproutify.auth.navigation.AuthBaseRoute
 import com.sproutify.auth.navigation.authSection
 import com.sproutify.auth.navigation.navigateToSignIn
 import com.sproutify.auth.navigation.navigateToSignUp
@@ -16,7 +16,7 @@ fun SprtNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = LandingRoute,
+        startDestination = AuthBaseRoute,
         modifier = modifier
     ) {
         authSection(

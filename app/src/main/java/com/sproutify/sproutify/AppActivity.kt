@@ -15,13 +15,7 @@ class AppActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SprtTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    LandingScreen(
-                        modifier = Modifier.padding(innerPadding),
-                        onSignUpClicked = {},
-                        onSignInClicked = {}
-                    )
-                }
+                SprtApp()
             }
         }
     }

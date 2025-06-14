@@ -1,7 +1,9 @@
 package com.sproutify.auth.landing
 
 import android.graphics.Paint.Align
+import android.util.Log
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -37,8 +39,7 @@ fun LandingScreen(
     onSignInClicked: () -> Unit,
     onSignUpClicked: () -> Unit
 ) {
-
-    Box(modifier = modifier.fillMaxSize().padding(SprtTheme.padding.m)) {
+    Box(modifier = modifier.fillMaxSize().padding(start = SprtTheme.padding.m, end = SprtTheme.padding.m, bottom = SprtTheme.padding.m)) {
         Text(modifier = Modifier.align(Alignment.TopStart), text = stringResource(LocalR.string.app_name), style = SprtTheme.typography.headlineSmall)
 
         Image(
@@ -71,6 +72,7 @@ fun LandingScreen(
             }
 
             Text(
+                modifier = Modifier.clickable(onClick = onSignUpClicked),
                 style = SprtTheme.typography.titleMedium,
                 text = text
             )
