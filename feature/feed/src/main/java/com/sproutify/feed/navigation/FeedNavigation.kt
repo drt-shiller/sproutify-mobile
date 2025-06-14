@@ -5,6 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.sproutify.feed.YourFeedScreen
 import kotlinx.serialization.Serializable
 
 @Serializable

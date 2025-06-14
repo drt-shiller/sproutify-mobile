@@ -8,6 +8,8 @@ import com.sproutify.auth.navigation.AuthBaseRoute
 import com.sproutify.auth.navigation.authSection
 import com.sproutify.auth.navigation.navigateToSignIn
 import com.sproutify.auth.navigation.navigateToSignUp
+import com.sproutify.feed.navigation.feedSection
+import com.sproutify.feed.navigation.navigateToFeed
 
 @Composable
 fun SprtNavHost(
@@ -21,7 +23,11 @@ fun SprtNavHost(
     ) {
         authSection(
             onSignInClicked = navController::navigateToSignIn,
-            onSignUpClicked = navController::navigateToSignUp
+            onSignUpClicked = navController::navigateToSignUp,
+            navigateToFeed = navController::navigateToFeed
+        )
+        feedSection(
+
         )
     }
 

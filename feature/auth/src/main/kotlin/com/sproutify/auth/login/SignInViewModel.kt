@@ -32,7 +32,7 @@ class SignInViewModel @Inject constructor() : ViewModel() {
                 viewModelScope.launch {
                     _uiState.update { state -> state.copy(signInState = SignInState.Loading) }
                     delay(500L)
-                    _uiState.update { state -> state.copy(signInState = SignInState.Ready) }
+                    _uiState.update { _emptyState }
                     _uiEvent.emit(SignInUiEvent.NavigateToFeed)
                 }
             }

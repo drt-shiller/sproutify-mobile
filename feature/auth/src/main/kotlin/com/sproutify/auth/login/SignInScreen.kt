@@ -45,7 +45,7 @@ fun SignInScreen(
         viewModel.uiEvent.collectLatest { event ->
             when (event) {
                 SignInUiEvent.NavigateToFeed -> {
-
+                    navigateToFeed()
                 }
 
                 is SignInUiEvent.ShowError -> {

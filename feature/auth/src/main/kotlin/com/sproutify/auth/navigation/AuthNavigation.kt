@@ -35,6 +35,7 @@ fun NavController.navigateToSignUp( navOptions: NavOptionsBuilder.() -> Unit = {
 fun NavGraphBuilder.authSection(
     onSignInClicked: () -> Unit,
     onSignUpClicked: () -> Unit,
+    navigateToFeed: () -> Unit
 ) {
     navigation<AuthBaseRoute>(startDestination = LandingRoute) {
         composable<LandingRoute>() {
@@ -48,7 +49,7 @@ fun NavGraphBuilder.authSection(
             SignInScreen(
                 navigateToSignUp = onSignUpClicked,
                 navigateToForgotPassword = {},
-                navigateToFeed = {}
+                navigateToFeed = navigateToFeed
             )
         }
 

@@ -9,10 +9,6 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
-//kotlin {
-//    jvmToolchain(18)
-//}
-
 android {
     defaultConfig {
         applicationId = "com.sproutify.sproutify"
@@ -42,6 +38,7 @@ dependencies {
     implementation(projects.core.designsystem)
 
     implementation(projects.feature.auth)
+    implementation(projects.feature.feed)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
