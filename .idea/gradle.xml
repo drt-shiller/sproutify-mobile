@@ -38,6 +38,8 @@
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/auth" />
+            <option value="$PROJECT_DIR$/feature/feed" />
+            <option value="$PROJECT_DIR$/feature/space" />
             <option value="$PROJECT_DIR$/lint" />
           </set>
         </option>

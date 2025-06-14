@@ -50,3 +50,7 @@ include(":core:model")
 include(":core:common")
 include(":feature:auth")
 include(":core:localization")
+
+include(":feature:space")
+include(":feature:feed")
+
