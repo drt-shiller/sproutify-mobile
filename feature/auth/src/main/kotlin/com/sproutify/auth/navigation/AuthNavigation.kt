@@ -1,6 +1,7 @@
 package com.sproutify.auth.navigation
 
 import android.util.Log
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptionsBuilder
@@ -33,6 +34,7 @@ fun NavController.navigateToSignUp( navOptions: NavOptionsBuilder.() -> Unit = {
 }
 
 fun NavGraphBuilder.authSection(
+    modifier: Modifier = Modifier,
     onSignInClicked: () -> Unit,
     onSignUpClicked: () -> Unit,
     navigateToFeed: () -> Unit
@@ -40,6 +42,7 @@ fun NavGraphBuilder.authSection(
     navigation<AuthBaseRoute>(startDestination = LandingRoute) {
         composable<LandingRoute>() {
             LandingScreen(
+                modifier = modifier,
                 onSignInClicked = onSignInClicked,
                 onSignUpClicked = onSignUpClicked
             )
@@ -47,6 +50,7 @@ fun NavGraphBuilder.authSection(
 
         composable<SignInRoute> {
             SignInScreen(
+                modifier = modifier,
                 navigateToSignUp = onSignUpClicked,
                 navigateToForgotPassword = {},
                 navigateToFeed = navigateToFeed
@@ -54,7 +58,9 @@ fun NavGraphBuilder.authSection(
         }
 
         composable<SignUpRoute> {
-            SignUpScreen()
+            SignUpScreen(
+                modifier = modifier
+            )
         }
     }
 }
