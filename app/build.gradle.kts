@@ -35,10 +35,12 @@ android {
 
 dependencies {
     implementation(projects.core.ui)
+    implementation(projects.core.module)
     implementation(projects.core.designsystem)
 
     implementation(projects.feature.auth)
     implementation(projects.feature.feed)
+    implementation(projects.feature.space)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -56,4 +58,9 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //modules
+    implementation(projects.core.model)
+    implementation(projects.modules.booking)
+    implementation(projects.modules.maintenance)
 }

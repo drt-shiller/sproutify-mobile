@@ -54,3 +54,6 @@ include(":core:localization")
 include(":feature:space")
 include(":feature:feed")
 
+include(":modules:booking")
+include(":modules:maintenance")
+include(":core:module")
